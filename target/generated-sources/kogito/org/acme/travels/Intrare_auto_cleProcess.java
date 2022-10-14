@@ -93,13 +93,13 @@ public class Intrare_auto_cleProcess extends org.kie.kogito.process.impl.Abstrac
             java.lang.Boolean stored = (java.lang.Boolean) kcontext.getVariable("stored");
             java.lang.Boolean VinValid = (java.lang.Boolean) kcontext.getVariable("VinValid");
             org.acme.travels.IntrareCLE intrareCLE = (org.acme.travels.IntrareCLE) kcontext.getVariable("intrareCLE");
-            return !intrareCLE.isCompoundFull();
+            return intrareCLE.isCompoundFull();
         }, 0, false);
         splitNode2.constraint(17, "_3D71E61F-BD1B-469B-B450-71C8EF73B398", "DROOLS_DEFAULT", "java", kcontext -> {
             java.lang.Boolean stored = (java.lang.Boolean) kcontext.getVariable("stored");
             java.lang.Boolean VinValid = (java.lang.Boolean) kcontext.getVariable("VinValid");
             org.acme.travels.IntrareCLE intrareCLE = (org.acme.travels.IntrareCLE) kcontext.getVariable("intrareCLE");
-            return intrareCLE.isCompoundFull();
+            return !intrareCLE.isCompoundFull();
         }, 0, false);
         splitNode2.done();
         org.jbpm.ruleflow.core.factory.RuleSetNodeFactory<?> ruleSetNode3 = factory.ruleSetNode(3);
@@ -115,7 +115,7 @@ public class Intrare_auto_cleProcess extends org.kie.kogito.process.impl.Abstrac
         ruleSetNode3.mapDataOutputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("_73C1684F-00A6-4E68-A449-AF0228B854A4_intrareCLEOutputX", "intrareCLE", "org.acme.travels.IntrareCLE", null)), new org.jbpm.workflow.core.impl.DataDefinition("intrareCLE", "intrareCLE", "java.lang.Object", null), null, null));
         ruleSetNode3.metaData("UniqueId", "_73C1684F-00A6-4E68-A449-AF0228B854A4");
         ruleSetNode3.metaData("elementname", "Verifica Compound Ocupat");
-        ruleSetNode3.metaData("x", 1437);
+        ruleSetNode3.metaData("x", 1439);
         ruleSetNode3.metaData("width", 140);
         ruleSetNode3.metaData("y", 116);
         ruleSetNode3.metaData("height", 91);
@@ -343,10 +343,10 @@ public class Intrare_auto_cleProcess extends org.kie.kogito.process.impl.Abstrac
         humanTaskNode17.workParameter("TaskName", "ChildrenHandling");
         humanTaskNode17.workParameter("Priority", "1");
         humanTaskNode17.workParameter("Skippable", "true");
-        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_TaskNameInputX", "TaskName", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("5e139af2-4ea4-43e3-8ee6-ce18c6011688", "EXPRESSION (ChildrenHandling)", "java.lang.Object", "ChildrenHandling"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_TaskNameInputX", "TaskName", "Object", null))), null));
+        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_TaskNameInputX", "TaskName", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("c0edb617-ab9d-4a8a-8b62-733868676a84", "EXPRESSION (ChildrenHandling)", "java.lang.Object", "ChildrenHandling"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_TaskNameInputX", "TaskName", "Object", null))), null));
         humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(new org.jbpm.workflow.core.impl.DataDefinition("intrareCLE", "intrareCLE", "java.lang.Object", null)), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_intrareCLEInputX", "intrareCLE", "org.acme.travels.IntrareCLE", null), null, null));
-        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_SkippableInputX", "Skippable", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("253b52fe-dbd2-4d81-a393-1cc7af025cdd", "EXPRESSION (true)", "java.lang.Object", "true"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_SkippableInputX", "Skippable", "Object", null))), null));
-        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_PriorityInputX", "Priority", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("ff26ea55-b4fe-4303-b33f-7c2e9862a767", "EXPRESSION (1)", "java.lang.Object", "1"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_PriorityInputX", "Priority", "Object", null))), null));
+        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_SkippableInputX", "Skippable", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("5722b6d2-8202-438d-8065-6b45dc333350", "EXPRESSION (true)", "java.lang.Object", "true"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_SkippableInputX", "Skippable", "Object", null))), null));
+        humanTaskNode17.mapDataInputAssociation(new org.jbpm.workflow.core.impl.DataAssociation(java.util.Arrays.asList(), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_PriorityInputX", "Priority", "Object", null), java.util.Arrays.asList(new org.jbpm.workflow.core.node.Assignment(null, new org.jbpm.workflow.core.impl.DataDefinition("33ac06a2-e642-4064-8694-0f23a0c60ed2", "EXPRESSION (1)", "java.lang.Object", "1"), new org.jbpm.workflow.core.impl.DataDefinition("_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_PriorityInputX", "Priority", "Object", null))), null));
         humanTaskNode17.done();
         humanTaskNode17.metaData("UniqueId", "_D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D");
         humanTaskNode17.metaData("elementname", "Inregistrare auto");
