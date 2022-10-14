@@ -19,7 +19,7 @@ import org.acme.travels.IntrareCLE;
 
 
 rule "Plata Valida" ruleflow-group "VerificarePlata"
-
+ 
 when
     $intrareCLE: IntrareCLE(plata>0)
 then
