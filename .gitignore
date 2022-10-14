@@ -7,3 +7,12 @@ target/generated-sources/kogito/org/acme/travels/PersonsProcess.java
 target/generated-sources/
 target/
 /target/*
+target/classes/org/acme/travels/DomainClassesMetadata2E460E98FBDF296CF50748F35F942A65.class
+target/classes/org/acme/travels/DomainClassesMetadata2E460E98FBDF296CF50748F35F942A65$org_acme_travels_IntrareCLE_Metadata.class
+target/classes/org/acme/travels/DomainClassesMetadata2E460E98FBDF296CF50748F35F942A65$org_acme_travels_Person_Metadata.class
+target/classes/org/acme/travels/Intrare_auto_cleProcess.class
+target/classes/org/acme/travels/PersonsProcess.class
+target/generated-sources/kogito/org/acme/travels/DomainClassesMetadata2E460E98FBDF296CF50748F35F942A65.java
+target/generated-sources/kogito/org/acme/travels/Intrare_auto_cleProcess.java
+target/generated-sources/kogito/org/acme/travels/PersonsProcess.java
+target/generated-sources/kogito/org/acme/travels/Rules2E460E98FBDF296CF50748F35F942A65.java
