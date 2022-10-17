@@ -20,12 +20,11 @@ import org.acme.travels.IntrareCLE;
 
 rule "Is VIN Valid" ruleflow-group "IntrareCLE"
 
-when
-// verificare lungime 17 caractere
-
-    $intrareCLE: IntrareCLE(VIN > 100)
-then
-    modify($intrareCLE) { 
-    	setVINok(true)
-    };
+no-loop
+    when
+        $IntrareCLE: IntrareCLE(culoare != null && contDestinatar != null && tara != null && stare == "0")
+    then
+        modify($IntrareCLE){
+            setVINok(true)
+    };  
 end

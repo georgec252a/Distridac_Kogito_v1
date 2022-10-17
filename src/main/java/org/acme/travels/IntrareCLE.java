@@ -17,8 +17,16 @@ package org.acme.travels;
 
 public class IntrareCLE {
 
-    private int VIN;
+    private String VIN;
     private boolean VINok;
+
+    private String marcaSofer;
+
+    private String culoare;
+
+    private String stare;
+
+    private String tara;
 
     private boolean neafectat;
 
@@ -35,15 +43,23 @@ public class IntrareCLE {
     private boolean stocareCompound;
     private boolean stocareCLE;
 
+    private boolean vinValid;
+    private boolean soferValid;
+
     public IntrareCLE() {
 
     }
 
-    public IntrareCLE(int vIN, boolean vINok, boolean neafectat, int plata, boolean plataOK, String contDestinatar,
-            boolean contDestinatarOK, int compoundOcupat, boolean compoundFull, boolean stocareCompound,
-            boolean stocareCLE) {
+    public IntrareCLE(String vIN, boolean vINok, String marcaSofer, String culoare, String stare, String tara,
+            boolean neafectat, int plata, boolean plataOK, String contDestinatar, boolean contDestinatarOK,
+            int compoundOcupat, boolean compoundFull, boolean stocareCompound, boolean stocareCLE, boolean vinValid,
+            boolean soferValid) {
         VIN = vIN;
         VINok = vINok;
+        this.marcaSofer = marcaSofer;
+        this.culoare = culoare;
+        this.stare = stare;
+        this.tara = tara;
         this.neafectat = neafectat;
         this.plata = plata;
         this.plataOK = plataOK;
@@ -53,13 +69,15 @@ public class IntrareCLE {
         this.compoundFull = compoundFull;
         this.stocareCompound = stocareCompound;
         this.stocareCLE = stocareCLE;
+        this.vinValid = vinValid;
+        this.soferValid = soferValid;
     }
 
-    public int getVIN() {
+    public String getVIN() {
         return VIN;
     }
 
-    public void setVIN(int vIN) {
+    public void setVIN(String vIN) {
         VIN = vIN;
     }
 
@@ -149,6 +167,54 @@ public class IntrareCLE {
 
     public void setCompoundOcupat(int compoundOcupat) {
         this.compoundOcupat = compoundOcupat;
+    }
+
+    public boolean isVinValid() {
+        return vinValid;
+    }
+
+    public void setVinValid(boolean vinValid) {
+        this.vinValid = vinValid;
+    }
+
+    public boolean isSoferValid() {
+        return soferValid;
+    }
+
+    public void setSoferValid(boolean soferValid) {
+        this.soferValid = soferValid;
+    }
+
+    public String getMarcaSofer() {
+        return marcaSofer;
+    }
+
+    public void setMarcaSofer(String marcaSofer) {
+        this.marcaSofer = marcaSofer;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getStare() {
+        return stare;
+    }
+
+    public void setStare(String stare) {
+        this.stare = stare;
+    }
+
+    public String getTara() {
+        return tara;
+    }
+
+    public void setTara(String tara) {
+        this.tara = tara;
     }
 
 }
