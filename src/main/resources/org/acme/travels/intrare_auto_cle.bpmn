@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_4MhqgDBLEDuG7r_yUlsVeA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_Y-OuUDECEDuG7r_yUlsVeA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_storedItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_VinValidItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_intrareCLEItem" structureRef="org.acme.travels.IntrareCLE"/>
   <bpmn2:itemDefinition id="_codVinItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_marcaSoferItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_soferValidItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="__D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_SkippableInputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_PriorityInputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__D9CFCEE9-BCDF-48D0-8CB4-A55584DF0D9D_CommentInputXItem" structureRef="Object"/>
@@ -44,12 +45,12 @@
   <bpmn2:itemDefinition id="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_modelInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_decisionInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_codVinInputXItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_intrareCLEOutputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_vinValidOutputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_namespaceInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_modelInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_decisionInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_marcaSoferInputXItem" structureRef="Object"/>
-  <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_intrareCLEOutputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_soferValidOutputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__4971DB92-E880-4CD2-A66F-C448FD07AFFF_codVinInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__4971DB92-E880-4CD2-A66F-C448FD07AFFF_marcaSoferInputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__4971DB92-E880-4CD2-A66F-C448FD07AFFF_intrareCLEOutputXItem" structureRef="org.acme.travels.IntrareCLE"/>
@@ -59,8 +60,8 @@
   <bpmn2:interface id="_4971DB92-E880-4CD2-A66F-C448FD07AFFF_ServiceInterface" name="org.acme.travels.services.IntrareCleService" implementationRef="org.acme.travels.services.IntrareCleService">
     <bpmn2:operation id="_4971DB92-E880-4CD2-A66F-C448FD07AFFF_ServiceOperation" name="evaluateVn" implementationRef="evaluateVn"/>
   </bpmn2:interface>
-  <bpmn2:collaboration id="_276C6ED2-4C93-446E-A1DA-AFDB22D68909" name="Default Collaboration">
-    <bpmn2:participant id="_602AC8D6-66ED-42DF-94BA-ADD3218FCE18" name="Pool Participant" processRef="intrare_auto_cle"/>
+  <bpmn2:collaboration id="_758A7916-E4D1-4EE9-A650-FF052092EB33" name="Default Collaboration">
+    <bpmn2:participant id="_127CF9D1-0F25-491F-8DE0-D7031669FDEF" name="Pool Participant" processRef="intrare_auto_cle"/>
   </bpmn2:collaboration>
   <bpmn2:process id="intrare_auto_cle" drools:packageName="org.acme.travels" drools:version="1.0" drools:adHoc="false" name="intrare_auto_cle" isExecutable="true" processType="Public">
     <bpmn2:extensionElements>
@@ -71,10 +72,15 @@
     <bpmn2:property id="intrareCLE" itemSubjectRef="_intrareCLEItem" name="intrareCLE"/>
     <bpmn2:property id="codVin" itemSubjectRef="_codVinItem" name="codVin"/>
     <bpmn2:property id="marcaSofer" itemSubjectRef="_marcaSoferItem" name="marcaSofer"/>
+    <bpmn2:property id="soferValid" itemSubjectRef="_soferValidItem" name="soferValid"/>
     <bpmn2:sequenceFlow id="_8DEBA9DD-6E41-49BC-A516-58609EB60DF0" sourceRef="_737F06C5-3D7A-4F48-81BF-BCCA9335C65E" targetRef="_4971DB92-E880-4CD2-A66F-C448FD07AFFF"/>
-    <bpmn2:sequenceFlow id="_9B4A28D1-8CAB-4E52-B1CD-9252B7FC188C" sourceRef="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9" targetRef="_737F06C5-3D7A-4F48-81BF-BCCA9335C65E"/>
+    <bpmn2:sequenceFlow id="_9B4A28D1-8CAB-4E52-B1CD-9252B7FC188C" sourceRef="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9" targetRef="_737F06C5-3D7A-4F48-81BF-BCCA9335C65E">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return soferValid;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_68876BCE-C52F-4145-A5FB-D140B22870FE" sourceRef="_2E8F13D7-2463-407D-8F98-CEE279322079" targetRef="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9"/>
-    <bpmn2:sequenceFlow id="_68BFAA17-CE69-4A5B-95E0-466270221BEC" sourceRef="_C56EA804-98FE-4094-8B0B-DD1BDD028D55" targetRef="_737F06C5-3D7A-4F48-81BF-BCCA9335C65E"/>
+    <bpmn2:sequenceFlow id="_68BFAA17-CE69-4A5B-95E0-466270221BEC" sourceRef="_C56EA804-98FE-4094-8B0B-DD1BDD028D55" targetRef="_737F06C5-3D7A-4F48-81BF-BCCA9335C65E">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return vinValid;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_777B08DC-78F9-4EDC-9B0B-4D81FD0FB0C4" sourceRef="_2E8F13D7-2463-407D-8F98-CEE279322079" targetRef="_C56EA804-98FE-4094-8B0B-DD1BDD028D55"/>
     <bpmn2:sequenceFlow id="_E6A1273D-712E-4E62-BE5D-4BF62F21D4CF" sourceRef="_0F983606-2637-4E8A-B362-D3E0002FFE0F" targetRef="_5DB7A50E-F65A-459D-98B9-7F9D717E4C5D">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return intrareCLE.isCompoundFull();
@@ -214,14 +220,14 @@
         <bpmn2:dataInput id="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_namespaceInputX" drools:dtype="java.lang.String" itemSubjectRef="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_namespaceInputXItem" name="namespace"/>
         <bpmn2:dataInput id="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_modelInputX" drools:dtype="java.lang.String" itemSubjectRef="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_modelInputXItem" name="model"/>
         <bpmn2:dataInput id="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_marcaSoferInputX" drools:dtype="Object" itemSubjectRef="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_marcaSoferInputXItem" name="marcaSofer"/>
-        <bpmn2:dataOutput id="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_intrareCLEOutputX" drools:dtype="Object" itemSubjectRef="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_intrareCLEOutputXItem" name="intrareCLE"/>
+        <bpmn2:dataOutput id="_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_soferValidOutputX" drools:dtype="Object" itemSubjectRef="__B09B5FBF-B58F-4B12-B3F2-C667012A67D9_soferValidOutputXItem" name="soferValid"/>
         <bpmn2:inputSet>
           <bpmn2:dataInputRefs>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_namespaceInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_modelInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_marcaSoferInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet>
-          <bpmn2:dataOutputRefs>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_intrareCLEOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_soferValidOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation>
@@ -243,8 +249,8 @@
         <bpmn2:targetRef>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_marcaSoferInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation>
-        <bpmn2:sourceRef>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_intrareCLEOutputX</bpmn2:sourceRef>
-        <bpmn2:targetRef>intrareCLE</bpmn2:targetRef>
+        <bpmn2:sourceRef>_B09B5FBF-B58F-4B12-B3F2-C667012A67D9_soferValidOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>soferValid</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:businessRuleTask>
     <bpmn2:businessRuleTask id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55" name="Verificare VIN" implementation="http://www.jboss.org/drools/dmn">
@@ -259,14 +265,14 @@
         <bpmn2:dataInput id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55_namespaceInputX" drools:dtype="java.lang.String" itemSubjectRef="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_namespaceInputXItem" name="namespace"/>
         <bpmn2:dataInput id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55_modelInputX" drools:dtype="java.lang.String" itemSubjectRef="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_modelInputXItem" name="model"/>
         <bpmn2:dataInput id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55_codVinInputX" drools:dtype="String" itemSubjectRef="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_codVinInputXItem" name="codVin"/>
-        <bpmn2:dataOutput id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55_intrareCLEOutputX" drools:dtype="Object" itemSubjectRef="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_intrareCLEOutputXItem" name="intrareCLE"/>
+        <bpmn2:dataOutput id="_C56EA804-98FE-4094-8B0B-DD1BDD028D55_vinValidOutputX" drools:dtype="Object" itemSubjectRef="__C56EA804-98FE-4094-8B0B-DD1BDD028D55_vinValidOutputXItem" name="vinValid"/>
         <bpmn2:inputSet>
           <bpmn2:dataInputRefs>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_namespaceInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_modelInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_codVinInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet>
-          <bpmn2:dataOutputRefs>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_intrareCLEOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_vinValidOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation>
@@ -288,7 +294,7 @@
         <bpmn2:targetRef>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_codVinInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation>
-        <bpmn2:sourceRef>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_intrareCLEOutputX</bpmn2:sourceRef>
+        <bpmn2:sourceRef>_C56EA804-98FE-4094-8B0B-DD1BDD028D55_vinValidOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>VinValid</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:businessRuleTask>
@@ -951,7 +957,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_4MhqgDBLEDuG7r_yUlsVeA</bpmn2:source>
-    <bpmn2:target>_4MhqgDBLEDuG7r_yUlsVeA</bpmn2:target>
+    <bpmn2:source>_Y-OuUDECEDuG7r_yUlsVeA</bpmn2:source>
+    <bpmn2:target>_Y-OuUDECEDuG7r_yUlsVeA</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>

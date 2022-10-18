@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_94ED34CD-A553-4E86-8424-0E858353D77C" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_35034AC9-BD3E-4002-B180-E8417319A3E6" name="verificareSofer" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_94ED34CD-A553-4E86-8424-0E858353D77C">
   <dmn:extensionElements/>
-  <dmn:itemDefinition id="_D84DC392-3086-4B81-AD5E-A92EB524A824" name="marcaSofer" isCollection="false">
-    <dmn:typeRef>string</dmn:typeRef>
+  <dmn:itemDefinition id="_D84DC392-3086-4B81-AD5E-A92EB524A824" name="soferValid" isCollection="false">
+    <dmn:typeRef>boolean</dmn:typeRef>
   </dmn:itemDefinition>
   <dmn:inputData id="_0187C0E0-5352-4F6A-BFDF-A5FA76F3AA81" name="marcaSofer">
     <dmn:extensionElements/>
@@ -10,7 +10,7 @@
   </dmn:inputData>
   <dmn:decision id="_190EDD1E-DAA9-40B5-9C23-106D87A1A68B" name="isSoferValid">
     <dmn:extensionElements/>
-    <dmn:variable id="_0F0A1DBF-4B58-43A5-80E7-5C3C9922866F" name="isSoferValid" typeRef="marcaSofer"/>
+    <dmn:variable id="_0F0A1DBF-4B58-43A5-80E7-5C3C9922866F" name="isSoferValid" typeRef="soferValid"/>
     <dmn:informationRequirement id="_23AEFAFB-3CFE-4DD2-8C50-58EB8D3EE6C0">
       <dmn:requiredInput href="#_0187C0E0-5352-4F6A-BFDF-A5FA76F3AA81"/>
     </dmn:informationRequirement>
