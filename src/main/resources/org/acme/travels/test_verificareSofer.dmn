@@ -10,7 +10,7 @@
   </dmn:inputData>
   <dmn:decision id="_190EDD1E-DAA9-40B5-9C23-106D87A1A68B" name="isSoferValid">
     <dmn:extensionElements/>
-    <dmn:variable id="_0F0A1DBF-4B58-43A5-80E7-5C3C9922866F" name="isSoferValid" typeRef="soferValid"/>
+    <dmn:variable id="_0F0A1DBF-4B58-43A5-80E7-5C3C9922866F" name="isSoferValid" typeRef="boolean"/>
     <dmn:informationRequirement id="_23AEFAFB-3CFE-4DD2-8C50-58EB8D3EE6C0">
       <dmn:requiredInput href="#_0187C0E0-5352-4F6A-BFDF-A5FA76F3AA81"/>
     </dmn:informationRequirement>
@@ -24,7 +24,7 @@
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_C74ADDBF-0408-4992-9B72-5C7E9FFF74FB">
         <dmn:inputEntry id="_9ECCFF15-17E5-4CF4-ADA4-BA209B7466D5">
-          <dmn:text>string length(?) = 5</dmn:text>
+          <dmn:text>"123"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_8F28B645-120D-4884-91D6-CBC467A9BF32">
           <dmn:text>true</dmn:text>
@@ -35,7 +35,7 @@
       </dmn:rule>
       <dmn:rule id="_F13575F6-DFA1-4022-BFCA-6E545CCD428A">
         <dmn:inputEntry id="_6F1E2166-E38C-46BC-9E70-650A6A116C3B">
-          <dmn:text>string length(?) != 5</dmn:text>
+          <dmn:text>"000"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_92923B55-0B68-4521-AE48-CA8B765BBC21">
           <dmn:text>false</dmn:text>

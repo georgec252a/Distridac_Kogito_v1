@@ -24,7 +24,7 @@
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_4C5D015D-5E19-4F77-88A7-A14688B9618E">
         <dmn:inputEntry id="_F9E04C7F-B7AD-42B0-B6C9-7F44C2CDE566">
-          <dmn:text>string length(?) =17</dmn:text>
+          <dmn:text>"123"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B7441343-25EF-40FE-8B42-DD5EA3481950">
           <dmn:text>true</dmn:text>
@@ -35,7 +35,7 @@
       </dmn:rule>
       <dmn:rule id="_01B1EDDE-F899-48EB-AE38-584B1D8575E4">
         <dmn:inputEntry id="_CC575B39-B502-406E-8A06-AEECDAF36A6C">
-          <dmn:text>string length(?) !=17</dmn:text>
+          <dmn:text>"000"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_FC0ADDFA-CBCF-4E4F-8A06-08D048C4D67F">
           <dmn:text>false</dmn:text>
@@ -52,9 +52,9 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_25C4C89A-10BF-4450-AB03-CF5D50A0F95E">
             <kie:width>50</kie:width>
+            <kie:width>300</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>508</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
