@@ -52,9 +52,9 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_9D7545BA-E147-42DC-BF0C-1C5FD7BCD46D">
             <kie:width>50</kie:width>
+            <kie:width>385</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>388</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -73,12 +73,12 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="693" y="272" width="100" height="50"/>
+        <dc:Bounds x="708" y="272" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_23AEFAFB-3CFE-4DD2-8C50-58EB8D3EE6C0" dmnElementRef="_23AEFAFB-3CFE-4DD2-8C50-58EB8D3EE6C0">
         <di:waypoint x="446" y="296"/>
-        <di:waypoint x="693" y="297"/>
+        <di:waypoint x="708" y="297"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

@@ -27,9 +27,7 @@ public class IntrareCleService {
 
     private static final Logger logger = LoggerFactory.getLogger(GenerareMesajBSD.class);
 
-    public IntrareCLE evaluateVn(String codVin, String marcaSofer) {
-
-        IntrareCLE intrareCle = new IntrareCLE();
+    public IntrareCLE evaluateVn(String codVin, String marcaSofer, IntrareCLE intrareCle) {
 
         intrareCle.setVIN(codVin); // "UU1DJF00066759821"
         intrareCle.setMarcaSofer(marcaSofer); // "55032402"
@@ -38,8 +36,8 @@ public class IntrareCleService {
         intrareCle.setTara("Romania");
         intrareCle.setStare("1");
 
-        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac", intrareCle.getVIN() + ", " + intrareCle.getMarcaSofer());
-
+        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac" + intrareCle.getVIN() + ", " + intrareCle.getMarcaSofer());
+        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac" + intrareCle.isVinValid() + ", " + intrareCle.isSoferValid());
         return intrareCle;
 
     }
