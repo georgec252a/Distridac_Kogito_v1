@@ -1,0 +1,13 @@
+package org.acme.travels;
+
+import org.acme.travels.IntrareCLE;
+
+rule "Is sofer valid" ruleflow-group "verificareSofer"
+no-loop
+    when
+        $intrareCle: IntrareCLE( marcaSofer str[length] 8 )
+    then
+        modify($intrareCle){
+            setSoferValid(true)
+    };  
+end

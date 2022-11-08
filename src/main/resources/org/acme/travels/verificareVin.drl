@@ -1,0 +1,13 @@
+package org.acme.travels;
+
+import org.acme.travels.IntrareCLE;
+
+rule "Is vin valid" ruleflow-group "verificareVin"
+no-loop
+    when
+        $intrareCle: IntrareCLE( VIN str[length] 17 )
+    then
+        modify($intrareCle){
+            setVinValid(true)
+    };  
+end

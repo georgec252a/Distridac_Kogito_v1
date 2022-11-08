@@ -25,19 +25,21 @@ import org.springframework.stereotype.Service;
 public class IntrareCleService {
     public final String STARE_FABRICATIE = "0";
 
-    private static final Logger logger = LoggerFactory.getLogger(GenerareMesajBSD.class);
+    private static final Logger logger = LoggerFactory.getLogger(IntrareCleService.class);
 
-    public IntrareCLE evaluateVn(String codVin, String marcaSofer, IntrareCLE intrareCle) {
+    public IntrareCLE evaluateVn(IntrareCLE intrareCle) {
 
-        intrareCle.setVIN(codVin); // "UU1DJF00066759821"
-        intrareCle.setMarcaSofer(marcaSofer); // "55032402"
+        intrareCle.setVIN(intrareCle.getVIN()); // "UU1DJF00066759821"
+        intrareCle.setMarcaSofer(intrareCle.getMarcaSofer()); // "55032402"
         intrareCle.setCuloare("alb");
         intrareCle.setContDestinatar("contDestinatar");
         intrareCle.setTara("Romania");
-        intrareCle.setStare("1");
+        intrareCle.setStare("0");
 
-        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac" + intrareCle.getVIN() + ", " + intrareCle.getMarcaSofer());
-        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac" + intrareCle.isVinValid() + ", " + intrareCle.isSoferValid());
+        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac "
+                + intrareCle.getVIN() + ", " + intrareCle.getMarcaSofer());
+        logger.info("Aici se face cautarea pentru : marcaSofer, codVin in baza de date a Distridac "
+                + intrareCle.isVinValid() + ", " + intrareCle.isSoferValid());
         return intrareCle;
 
     }
