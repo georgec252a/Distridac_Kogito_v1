@@ -1,173 +1,92 @@
 package com.rest;
 
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
+import org.testng.annotations.BeforeClass;
+
+import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.Assert;
 
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class A1_BDD_GET {
+public class A5_BDD_PUT {
 
     RequestSpecification requestSpecification;
 
     ResponseSpecification responseSpecification;
+    String payload;
+
+    @BeforeClass
+    public void beforeClass() {
+        //I. Version without Builder
+        //**********************************************************************
+        //Using NonBDD RequestSpecification
+        //        requestSpecification=given().baseUri("http://localhost:8086/").
+        //                header("Content-Type", "json").
+        //                log().all();
+        //        RestAssured.requestSpecification=requestSpecification;
+
+        //Using NonBDD ResponseSpecification
+        //        responseSpecification= RestAssured.expect().
+        //                statusCode(200).
+        //                contentType(ContentType.JSON).
+        //                log().all();
+        //        RestAssured.responseSpecification=responseSpecification;
+        //**********************************************************************
+
+        //II. Version with Builder
+        //**********************************************************************
+        //Using the builder - RequestSpecBuilder
+
+        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+        requestSpecBuilder.setBaseUri("http://localhost:8086/");
+        requestSpecBuilder.addHeader("Content-Type", "json");
+        requestSpecBuilder.setContentType(ContentType.JSON);
+        requestSpecBuilder.log(LogDetail.ALL);
+        RestAssured.requestSpecification = requestSpecBuilder.build();
+
+        //Using the builder - ResponseSpecBuilder
+        ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
+        responseSpecBuilder.expectStatusCode(201);
+        responseSpecBuilder.expectContentType(ContentType.JSON);
+        RestAssured.responseSpecification = responseSpecBuilder.build();
+
+        //**********************************************************************
+
+    }
 
     //-------------TEST1-------------------
     //--------------------------------------
-    //Verificare status code 200 pentru GET pe endpoint-ul intrare_auto_cle
+    //Verificare status code 201 pentru PUT pe endpoint-ul intrare_auto_cle
     @org.testng.annotations.Test
-    public void testGet_intrare_auto_cle() {
+    public void PUT1_intrare_auto_cle() {
+        String id = "1";
+        payload = "{\n" +
+                "    \"stored\": true,\n" +
+                "    \"intrareCLE\": {\n" +
+                "        \"marcaSofer\": \"99999999\",\n" +
+                "        \"plata\": 77777,\n" +
+                "        \"vin\": \"9999999999999999999\"\n" +
+                "    }\n" +
+                "}";
 
         given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200);
-    }
-
-    //-------------TEST2-------------------
-    //--------------------------------------
-    //Extrage din raspuns anumite valori
-    @org.testng.annotations.Test
-    public void extractSingleResponse_intrare_auto_cle() {
-        Response res =
-                given().
-                    baseUri("http://localhost:8086/").
+                body(payload).
+                pathParam("intrareId", id).
                 when().
-                        get("/intrare_auto_cle").
+                put("/intrare_auto_cle/{intrareId}").
                 then().
-                        log().
-                        all().
-                        assertThat().
-                        statusCode(200).
-                        extract().
-                        response();
-
-        JsonPath jsonPath = new JsonPath(res.asString());
-        System.out.println("response = " + res.path("[0].id"));
-        System.out.println("response = " + jsonPath.getString("[1].id"));
-        System.out.println("response = " + jsonPath.getString("[1].id"));
-        System.out.println();
-    }
-
-    //-------------TEST3-------------------
-    //--------------------------------------
-    //Extrage din raspuns valoarea ID-ului si verifica daca corespunde cu o anumita valoare
-    @org.testng.annotations.Test
-    public void extractResponseAndAssert_intrare_auto_cle() {
-        String res =
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
                 log().
                 all().
                 assertThat().
-                statusCode(200).
-                extract().
-                response().
-                path("[0].id");
-
-        assertThat(res, equalTo("e5bca575-5ebc-4f36-a31a-5f77a7e4dadb"));
-        Assert.assertEquals(res, "e5bca575-5ebc-4f36-a31a-5f77a7e4dadb");
+                body("intrareCLE.marcaSofer", equalToObject("12345678")).
+                body("intrareCLE.vin", equalToObject("12345678901234567")).
+                body("intrareCLE.id", equalToObject("1"));
     }
-
-    //-------------TEST4-------------------
-    //--------------------------------------
-    //test Hamcrest contains() - verifica daca id-ul din raspuns contine o anumita valoare
-    @org.testng.annotations.Test
-    public void ContainsID_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", contains("e5bca575-5ebc-4f36-a31a-5f77a7e4dadb", "2fe7d5b3-e0a9-48f3-a435-57ca8174b25e"));
-    }
-
-    //-------------TEST5-------------------
-    //--------------------------------------
-    //test Hamcrest empty() - verifica daca in raspuns id-ul este vid
-    @org.testng.annotations.Test
-    public void Empty_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", empty());
-    }
-
-    //-------------TEST6-------------------
-    //--------------------------------------
-    //test Hamcrest not(emptyArray()) - verifica daca vreun ID este null
-    @org.testng.annotations.Test
-    public void NotEmpty_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", not(emptyArray()));
-
-    }
-
-    //-------------TEST7-------------------
-    //--------------------------------------
-    //test Hamcrest hasSize()) - verifica daca dimensiunea ID-ului are dimensiunea 2
-    @org.testng.annotations.Test
-    public void Size_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", hasSize(2));
-
-    }
-
-    //-------------TEST8-------------------
-    //--------------------------------------
-    //test Hamcrest hasValue()) - verifica daca exista o anumita valoarea in locatia[0]
-    @org.testng.annotations.Test
-    public void HasValue_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("[0]", hasValue("e5bca575-5ebc-4f36-a31a-5f77a7e4dadb"));
-    }
-
 
 }

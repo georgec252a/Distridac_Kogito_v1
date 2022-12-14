@@ -1,21 +1,21 @@
 package com.rest;
 
+import org.testng.annotations.BeforeClass;
+
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.annotations.BeforeClass;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class NonBDD_POST {
+public class A4_NonBDD_POST {
 
     RequestSpecification requestSpecification;
 
@@ -28,19 +28,18 @@ public class NonBDD_POST {
         //I. Version without Builder
         //**********************************************************************
         //Using NonBDD RequestSpecification
-//        requestSpecification=given().baseUri("http://localhost:8086/").
-//                header("Content-Type", "json").
-//                log().all();
-//        RestAssured.requestSpecification=requestSpecification;
+        //        requestSpecification=given().baseUri("http://localhost:8086/").
+        //                header("Content-Type", "json").
+        //                log().all();
+        //        RestAssured.requestSpecification=requestSpecification;
 
         //Using NonBDD ResponseSpecification
-//        responseSpecification= RestAssured.expect().
-//                statusCode(200).
-//                contentType(ContentType.JSON).
-//                log().all();
-//        RestAssured.responseSpecification=responseSpecification;
+        //        responseSpecification= RestAssured.expect().
+        //                statusCode(200).
+        //                contentType(ContentType.JSON).
+        //                log().all();
+        //        RestAssured.responseSpecification=responseSpecification;
         //**********************************************************************
-
 
         //II. Version with Builder
         //**********************************************************************
@@ -63,7 +62,6 @@ public class NonBDD_POST {
 
     }
 
-
     //-------------TEST1-------------------
     //--------------------------------------
     //Verificare status code 201 pentru POST pe endpoint-ul intrare_auto_cle
@@ -78,12 +76,9 @@ public class NonBDD_POST {
                 "    }\n" +
                 "}";
 
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.statusCode(), equalTo(201));
     }
-
 
     //-------------TEST2-------------------
     //--------------------------------------
@@ -100,9 +95,7 @@ public class NonBDD_POST {
                 "    }\n" +
                 "}";
 
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.vinok"), equalTo(true));
         assertThat(response.path("intrareCLE.soferValid"), equalTo(true));
 
@@ -114,7 +107,7 @@ public class NonBDD_POST {
     @org.testng.annotations.Test
     public void POST3_intrare_auto_cle() {
 
-        payload ="{\n" +
+        payload = "{\n" +
                 "  \"stored\": true,\n" +
                 "  \"intrareCLE\": {\n" +
                 "    \"marcaSofer\": \"12345678\",\n" +
@@ -123,10 +116,7 @@ public class NonBDD_POST {
                 "  }\n" +
                 "}";
 
-
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.marcaSofer"), equalTo("12345678"));
         assertThat(response.path("intrareCLE.culoare"), equalTo("alb"));
         assertThat(response.path("intrareCLE.tara"), equalTo("Romania"));
@@ -141,7 +131,7 @@ public class NonBDD_POST {
     @org.testng.annotations.Test
     public void POST4_intrare_auto_cle() {
 
-        payload ="{\n" +
+        payload = "{\n" +
                 "  \"stored\": true,\n" +
                 "  \"intrareCLE\": {\n" +
                 "    \"marcaSofer\": \"12345678\",\n" +
@@ -150,10 +140,7 @@ public class NonBDD_POST {
                 "  }\n" +
                 "}";
 
-
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.vinok"), equalTo(true));
 
     }
@@ -164,7 +151,7 @@ public class NonBDD_POST {
     @org.testng.annotations.Test
     public void POST5_intrare_auto_cle() {
 
-        payload ="{\r\n  " +
+        payload = "{\r\n  " +
                 "  \"stored\": true,\r\n  " +
                 "  \"intrareCLE\": {\r\n      " +
                 "  \"marcaSofer\": \"12345678\",\r\n   " +
@@ -172,9 +159,7 @@ public class NonBDD_POST {
                 "      \"vin\": \"12345678901234567\"\r\n   " +
                 " }\r\n}";
 
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.plataOK"), equalTo(true));
     }
 
@@ -184,7 +169,7 @@ public class NonBDD_POST {
     @org.testng.annotations.Test
     public void POST7_intrare_auto_cle() {
 
-        payload ="{\r\n  " +
+        payload = "{\r\n  " +
                 "  \"stored\": true,\r\n  " +
                 "  \"intrareCLE\": {\r\n      " +
                 "  \"marcaSofer\": \"12345678\",\r\n   " +
@@ -192,9 +177,7 @@ public class NonBDD_POST {
                 "      \"vin\": \"12345678901234567\"\r\n   " +
                 " }\r\n}";
 
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.contDestinatar"), equalTo("contDestinatar"));
     }
 
@@ -204,7 +187,7 @@ public class NonBDD_POST {
     @org.testng.annotations.Test
     public void POST8_intrare_auto_cle() {
 
-        payload ="{\r\n  " +
+        payload = "{\r\n  " +
                 "  \"stored\": true,\r\n  " +
                 "  \"intrareCLE\": {\r\n     " +
                 "   \"marcaSofer\": \"12345678\",\r\n    " +
@@ -213,11 +196,26 @@ public class NonBDD_POST {
                 "   \"compoundOcupat\":0\r\n " +
                 "   }\r\n}";
 
-        Response response = with().
-                body(payload).
-                post("/intrare_auto_cle");
+        Response response = with().body(payload).post("/intrare_auto_cle");
         assertThat(response.path("intrareCLE.compoundFull"), equalTo(true));
     }
 
+    //-------------TEST9-------------------
+    //--------------------------------------
+    //Test 9 - Verify Cont Destinatar is equal to a matcher REGEX
+    @org.testng.annotations.Test
+    public void POST9_intrare_auto_cle() {
+
+        payload = "{\r\n  " +
+                "  \"stored\": true,\r\n  " +
+                "  \"intrareCLE\": {\r\n      " +
+                "  \"marcaSofer\": \"12345678\",\r\n   " +
+                "     \"plata\": 12345,\r\n  " +
+                "      \"vin\": \"12345678901234567\"\r\n   " +
+                " }\r\n}";
+
+        Response response = with().body(payload).post("/intrare_auto_cle");
+        assertThat(response.<String> path("intrareCLE.contDestinatar"), matchesPattern("[a-z]*D{1}[a-z]{9}"));
+    }
 
 }

@@ -39,7 +39,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class BDD {
+public class General_Tests {
     RequestSpecification requestSpecification;
     ResponseSpecification responseSpecification;
 

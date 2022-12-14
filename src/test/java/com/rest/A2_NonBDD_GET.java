@@ -1,10 +1,10 @@
 package com.rest;
 
-import io.restassured.path.json.JsonPath;
 import org.testng.annotations.BeforeClass;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
-public class A3_NonBDD_GET {
+public class A2_NonBDD_GET {
 
     RequestSpecification requestSpecification;
 
@@ -25,35 +25,29 @@ public class A3_NonBDD_GET {
         //I. Version without Builder
         //**********************************************************************
         //Using NonBDD RequestSpecification
-        requestSpecification=given().baseUri("http://localhost:8086/").
-                header("Content-Type", "json").
-                log().all();
-        RestAssured.requestSpecification=requestSpecification;
+        requestSpecification = given().baseUri("http://localhost:8086/").header("Content-Type", "json").log().all();
+        RestAssured.requestSpecification = requestSpecification;
 
         //Using NonBDD ResponseSpecification
-        responseSpecification= RestAssured.expect().
-                statusCode(200).
-                contentType(ContentType.JSON).
-                log().all();
-        RestAssured.responseSpecification=responseSpecification;
+        responseSpecification = RestAssured.expect().statusCode(200).contentType(ContentType.JSON).log().all();
+        RestAssured.responseSpecification = responseSpecification;
         //**********************************************************************
-
 
         //II. Version with Builder
         //**********************************************************************
         //Using the builder - RequestSpecBuilder
 
-//        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
-//        requestSpecBuilder.setBaseUri("http://localhost:8086/");
-//        requestSpecBuilder.addHeader("Content-Type", "json");
-//        requestSpecBuilder.log(LogDetail.ALL);
-//        RestAssured.requestSpecification = requestSpecBuilder.build();
+        //        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+        //        requestSpecBuilder.setBaseUri("http://localhost:8086/");
+        //        requestSpecBuilder.addHeader("Content-Type", "json");
+        //        requestSpecBuilder.log(LogDetail.ALL);
+        //        RestAssured.requestSpecification = requestSpecBuilder.build();
 
         //Using the builder - ResponseSpecBuilder
-//        ResponseSpecBuilder responseSpecBuilder=new ResponseSpecBuilder();
-//        responseSpecBuilder.expectStatusCode(200);
-//        responseSpecBuilder.expectContentType(ContentType.JSON);
-//        RestAssured.responseSpecification=responseSpecBuilder.build();
+        //        ResponseSpecBuilder responseSpecBuilder=new ResponseSpecBuilder();
+        //        responseSpecBuilder.expectStatusCode(200);
+        //        responseSpecBuilder.expectContentType(ContentType.JSON);
+        //        RestAssured.responseSpecification=responseSpecBuilder.build();
 
         //**********************************************************************
 
@@ -83,13 +77,7 @@ public class A3_NonBDD_GET {
     @org.testng.annotations.Test
     public void extractSingleResponse_intrare_auto_cle() {
         Response res =
-                given().spec(RestAssured.requestSpecification).
-                        get("/intrare_auto_cle").
-                        then().
-                        log().
-                        all().
-                        extract().
-                        response();
+                given().spec(RestAssured.requestSpecification).get("/intrare_auto_cle").then().log().all().extract().response();
 
         JsonPath jsonPath = new JsonPath(res.asString());
         System.out.println("response = " + res.path("[0].id"));
@@ -104,7 +92,7 @@ public class A3_NonBDD_GET {
     @org.testng.annotations.Test
     public void Get_extractSingleResponse_intrare_auto_cle() {
 
-        Response res =get("/intrare_auto_cle").then().spec(RestAssured.responseSpecification).log().all().extract().response();
+        Response res = get("/intrare_auto_cle").then().spec(RestAssured.responseSpecification).log().all().extract().response();
 
         JsonPath jsonPath = new JsonPath(res.asString());
         System.out.println("response = " + res.path("[0].id"));
@@ -112,22 +100,13 @@ public class A3_NonBDD_GET {
         System.out.println();
     }
 
-
     //-------------TEST3-------------------
     //--------------------------------------
     //TEST get method - First Test with RequestSpecification
     //test Hamcrest empty() - verifica daca in raspuns id-ul este vid
     @org.testng.annotations.Test
     public void Empty_intrare_auto_cle() {
-        given().
-                spec(RestAssured.requestSpecification).
-                get("/intrare_auto_cle").
-                then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", empty());
+        given().spec(RestAssured.requestSpecification).get("/intrare_auto_cle").then().log().all().assertThat().statusCode(200).body("id", empty());
     }
 
     //-------------TEST3-------------------
@@ -136,16 +115,8 @@ public class A3_NonBDD_GET {
     //test Hamcrest empty() - verifica daca in raspuns id-ul este vid
     @org.testng.annotations.Test
     public void Empty_intrare_auto_cle2() {
-                get("/intrare_auto_cle").
-                    then().
-                        spec(RestAssured.responseSpecification).
-                        log().
-                        all().
-                        assertThat().
-                        statusCode(200).
-                        body("id", empty());
+        get("/intrare_auto_cle").then().spec(RestAssured.responseSpecification).log().all().assertThat().statusCode(200).body("id", empty());
     }
-
 
     //-------------TEST4-------------------
     //--------------------------------------
@@ -154,13 +125,7 @@ public class A3_NonBDD_GET {
     @org.testng.annotations.Test
     public void GET_Empty_intrare_auto_cle() {
 
-                get("/intrare_auto_cle").
-                then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", empty());
+        get("/intrare_auto_cle").then().log().all().assertThat().statusCode(200).body("id", empty());
     }
 
     //-------------TEST4-------------------
@@ -168,16 +133,7 @@ public class A3_NonBDD_GET {
     //TEST get method - Second Test with RequestSpecification and ResponseSpecification
     @org.testng.annotations.Test
     public void NotEmpty_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-                when().
-                get("/intrare_auto_cle").
-                then().
-                log().
-                all().
-                assertThat().
-                statusCode(200).
-                body("id", not(emptyArray()));
+        given().baseUri("http://localhost:8086/").when().get("/intrare_auto_cle").then().log().all().assertThat().statusCode(200).body("id", not(emptyArray()));
 
     }
 

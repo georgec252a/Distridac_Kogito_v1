@@ -1,7 +1,5 @@
 package com.rest;
 
-import org.testng.annotations.BeforeClass;
-
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -9,12 +7,12 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.testng.annotations.BeforeClass;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalToObject;
 
-public class A5_BDD_PUT {
+public class A6_BDD_DELETE {
 
     RequestSpecification requestSpecification;
 
@@ -66,21 +64,12 @@ public class A5_BDD_PUT {
     @org.testng.annotations.Test
     public void PUT1_intrare_auto_cle() {
         String id = "1";
-        payload = "{\n" +
-                "    \"stored\": true,\n" +
-                "    \"intrareCLE\": {\n" +
-                "        \"marcaSofer\": \"99999999\",\n" +
-                "        \"plata\": 77777,\n" +
-                "        \"vin\": \"9999999999999999999\"\n" +
-                "    }\n" +
-                "}";
 
         given().
-                body(payload).
                 pathParam("intrareId", id).
-                when().
-                put("/intrare_auto_cle/{intrareId}").
-                then().
+        when().
+                delete("/intrare_auto_cle/{intrareId}").
+        then().
                 log().
                 all().
                 assertThat().
