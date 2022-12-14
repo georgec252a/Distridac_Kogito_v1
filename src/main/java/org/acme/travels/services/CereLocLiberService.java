@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CereLocLiber {
+public class CereLocLiberService {
     public final String STARE_FABRICATIE = "0";
 
     private static final Logger logger = LoggerFactory.getLogger(CereInfoZonaService.class);

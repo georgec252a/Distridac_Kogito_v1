@@ -18,7 +18,7 @@ package org.acme.travels
 import org.acme.travels.IntrareCLE;
 
 
-rule "Is Tara Valid" ruleflow-group "VerificareTara"
+rule "Verificare Tara" ruleflow-group "VerificareTara"
 
 no-loop
     when
