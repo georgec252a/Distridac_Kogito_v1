@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f13b8cf-07be-4877-8b66-c1e3332ee8e0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pojo/IntrareCLE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pojo/MainObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A1_BDD_GET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A2_NonBDD_GET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A3_BDD_POST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A4_NonBDD_POST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A5_BDD_PUT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/A6_BDD_DELETE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/General_Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/JacksonAPI_JSONObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rest/ResponseAndRequestSpecifications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testscenario/KogitoScenarioJunitActivatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Create_Intrare_CLE_Payload.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/KieTest.scesim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/acme/travels/verificareSofer.dmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/acme/travels/verificareSofer.dmn" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HGWpKZPp1AcL6wnKTCT35Ywhyw" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programs/Distridac_Kogito/RestAssuredTestNGFramework-master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9e3b3906f14ca724d39824f37a6eb755&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rest" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="Test.extractSingleResponse_intrare_auto_cle" />
+      <command value="extractResponseAndAssert_intrare_auto_cle" />
+      <command value="Test.extractResponseAndAssert_intrare_auto_cle" />
+    </option>
+  </component>
+  <component name="RunManager" selected="TestNG.A3_BDD_POST.POST13_intrare_auto_cle">
+    <configuration name="KogitoInfinispanSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="process-business-rules-springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.kie.kogito.tests.KogitoInfinispanSpringbootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A1_BDD_GET.TestGet10_intrare_auto_cle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="process-business-rules-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rest" />
+      <option name="MAIN_CLASS_NAME" value="com.rest.A1_BDD_GET" />
+      <option name="METHOD_NAME" value="TestGet10_intrare_auto_cle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A1_BDD_GET.TestGet9_intrare_auto_cle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="process-business-rules-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rest" />
+      <option name="MAIN_CLASS_NAME" value="com.rest.A1_BDD_GET" />
+      <option name="METHOD_NAME" value="TestGet9_intrare_auto_cle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A3_BDD_POST.POST12_intrare_auto_cle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="process-business-rules-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rest" />
+      <option name="MAIN_CLASS_NAME" value="com.rest.A3_BDD_POST" />
+      <option name="METHOD_NAME" value="POST12_intrare_auto_cle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A3_BDD_POST.POST13_intrare_auto_cle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="process-business-rules-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rest" />
+      <option name="MAIN_CLASS_NAME" value="com.rest.A3_BDD_POST" />
+      <option name="METHOD_NAME" value="POST13_intrare_auto_cle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A3_BDD_POST.POST14_intrare_auto_cle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="process-business-rules-springboot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rest" />
+      <option name="MAIN_CLASS_NAME" value="com.rest.A3_BDD_POST" />
+      <option name="METHOD_NAME" value="POST14_intrare_auto_cle" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.A3_BDD_POST.POST13_intrare_auto_cle" />
+        <item itemvalue="TestNG.A3_BDD_POST.POST12_intrare_auto_cle" />
+        <item itemvalue="TestNG.A3_BDD_POST.POST14_intrare_auto_cle" />
+        <item itemvalue="TestNG.A1_BDD_GET.TestGet10_intrare_auto_cle" />
+        <item itemvalue="TestNG.A1_BDD_GET.TestGet9_intrare_auto_cle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f13b8cf-07be-4877-8b66-c1e3332ee8e0" name="Changes" comment="" />
+      <created>1667912085243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667912085243</updated>
+      <workItem from="1667912087826" duration="2813000" />
+      <workItem from="1667981796251" duration="6064000" />
+      <workItem from="1668433396138" duration="5558000" />
+      <workItem from="1668605187008" duration="2457000" />
+      <workItem from="1668762885953" duration="20439000" />
+      <workItem from="1669289604579" duration="406000" />
+      <workItem from="1669630713410" duration="8650000" />
+      <workItem from="1669732273367" duration="4625000" />
+      <workItem from="1670329875572" duration="36110000" />
+      <workItem from="1670602945265" duration="8661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
