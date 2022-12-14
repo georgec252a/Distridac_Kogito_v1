@@ -75,18 +75,8 @@ public class A5_BDD_PUT {
                 "    }\n" +
                 "}";
 
-        given().
-                body(payload).
-                pathParam("intrareId", id).
-                when().
-                put("/intrare_auto_cle/{intrareId}").
-                then().
-                log().
-                all().
-                assertThat().
-                body("intrareCLE.marcaSofer", equalToObject("12345678")).
-                body("intrareCLE.vin", equalToObject("12345678901234567")).
-                body("intrareCLE.id", equalToObject("1"));
+        given().body(payload).pathParam("intrareId", id).when().put("/intrare_auto_cle/{intrareId}").then().log().all().assertThat().body("intrareCLE.marcaSofer", equalToObject("12345678"))
+                .body("intrareCLE.vin", equalToObject("12345678901234567")).body("intrareCLE.id", equalToObject("1"));
     }
 
 }

@@ -1,10 +1,6 @@
 package com.pojo;
-// mainObject.put("stored", "true");
-//         mainObject.put("intrareCLE", intrareCLE);
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class MainObject {

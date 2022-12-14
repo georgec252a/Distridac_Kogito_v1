@@ -1,7 +1,7 @@
 package com.pojo;
-//        intrareCLE.put("marcaSofer", "12345678");
-//                intrareCLE.put("vin", "12345678901234567");
 
+// intrareCLE.put("marcaSofer", "12345678");
+// intrareCLE.put("vin", "12345678901234567");
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -11,7 +11,7 @@ public class IntrareCLE {
     private String vin;
     private String culoare;
     private String stare;
-    private String tara ;
+    private String tara;
     private String neafectat;
     private String plata;
     private boolean plataOK;

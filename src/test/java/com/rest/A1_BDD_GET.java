@@ -1,14 +1,13 @@
 package com.rest;
 
+import java.util.HashMap;
+
 import org.testng.Assert;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-
-import java.io.File;
-import java.util.HashMap;
 
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
@@ -100,7 +99,6 @@ public class A1_BDD_GET {
         given().baseUri("http://localhost:8086/").when().get("/intrare_auto_cle").then().log().all().assertThat().statusCode(200).body("[0]", hasValue("e5bca575-5ebc-4f36-a31a-5f77a7e4dadb"));
     }
 
-
     //-------------TEST9-------------------
     //--------------------------------------
     //Verificare status code 200 pentru GET pe endpoint-ul intrare_auto_cle
@@ -108,27 +106,16 @@ public class A1_BDD_GET {
     @org.testng.annotations.Test
     public void TestGet9_intrare_auto_cle() {
 
-        HashMap<String,String> parametrii=new HashMap<String,String>();
-        parametrii.put("foo1","bar1");
-        parametrii.put("foo12","bar12");
-        parametrii.put("foo123","bar123");
+        HashMap<String, String> parametrii = new HashMap<String, String>();
+        parametrii.put("foo1", "bar1");
+        parametrii.put("foo12", "bar12");
+        parametrii.put("foo123", "bar123");
 
-        given().
-                baseUri("http://localhost:8086/").
-//              param("foo","bar").
-//              queryParam("foo","bar").
-                queryParams(parametrii).
-                log().
-                all().
-        when().
-                get("/intrare_auto_cle").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200);
+        given().baseUri("http://localhost:8086/").
+        //              param("foo","bar").
+        //              queryParam("foo","bar").
+                queryParams(parametrii).log().all().when().get("/intrare_auto_cle").then().log().all().assertThat().statusCode(200);
     }
-
 
     //-------------TEST10-------------------
     //--------------------------------------
@@ -136,19 +123,7 @@ public class A1_BDD_GET {
     //Trimitere de parametrii Path in URL
     @org.testng.annotations.Test
     public void TestGet10_intrare_auto_cle() {
-        given().
-                baseUri("http://localhost:8086/").
-                pathParam("id","1").
-                log().
-                all().
-        when().
-                get("/intrare_auto_cle/{id}").
-        then().
-                log().
-                all().
-                assertThat().
-                statusCode(200);
+        given().baseUri("http://localhost:8086/").pathParam("id", "1").log().all().when().get("/intrare_auto_cle/{id}").then().log().all().assertThat().statusCode(200);
     }
-
 
 }

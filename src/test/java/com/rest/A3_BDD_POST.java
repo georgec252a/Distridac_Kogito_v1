@@ -1,10 +1,15 @@
 package com.rest;
 
+import java.io.File;
+import java.util.HashMap;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pojo.IntrareCLE;
 import com.pojo.MainObject;
-import org.testng.annotations.BeforeClass;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -13,10 +18,6 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.annotations.DataProvider;
-
-import java.io.File;
-import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -218,16 +219,9 @@ public class A3_BDD_POST {
     @org.testng.annotations.Test
     public void POST10_intrare_auto_cle() {
 
-        File file=new File("src/test/resources/Create_Intrare_CLE_Payload.json");
-        given().
-                body(file).
-        when().
-                post("/intrare_auto_cle").
-        then().
-                log().
-                all();
+        File file = new File("src/test/resources/Create_Intrare_CLE_Payload.json");
+        given().body(file).when().post("/intrare_auto_cle").then().log().all();
     }
-
 
     //-------------TEST11-------------------
     //--------------------------------------
@@ -248,16 +242,8 @@ public class A3_BDD_POST {
         ObjectMapper objectMapper = new ObjectMapper();
         String mainObjectStr = objectMapper.writeValueAsString(mainObject);
 
-        given().
-                body(mainObjectStr).
-        when().
-                post("/intrare_auto_cle").
-        then().
-                log().
-                all();
+        given().body(mainObjectStr).when().post("/intrare_auto_cle").then().log().all();
     }
-
-
 
     //-------------TEST12-------------------
     //--------------------------------------
@@ -266,21 +252,14 @@ public class A3_BDD_POST {
     @org.testng.annotations.Test
     public void POST12_intrare_auto_cle() throws JsonProcessingException {
 
-        IntrareCLE intrareCLE1=new IntrareCLE("1","12345678901234567");
-        MainObject mainObject1=new MainObject(true,intrareCLE1);
+        IntrareCLE intrareCLE1 = new IntrareCLE("1", "12345678901234567");
+        MainObject mainObject1 = new MainObject(true, intrareCLE1);
 
         ObjectMapper objectMapper = new ObjectMapper();
         String mainObjectStr = objectMapper.writeValueAsString(mainObject1);
 
-        given().
-                body(mainObjectStr).
-                when().
-                post("/intrare_auto_cle").
-                then().
-                log().
-                all();
+        given().body(mainObjectStr).when().post("/intrare_auto_cle").then().log().all();
     }
-
 
     //-------------TEST13-------------------
     //--------------------------------------
@@ -290,29 +269,21 @@ public class A3_BDD_POST {
     @org.testng.annotations.Test
     public void POST13_intrare_auto_cle() throws JsonProcessingException {
 
-        IntrareCLE intrareCLE1=new IntrareCLE("12345678","12345678901234567");
-        MainObject mainObject1=new MainObject(true,intrareCLE1);
+        IntrareCLE intrareCLE1 = new IntrareCLE("12345678", "12345678901234567");
+        MainObject mainObject1 = new MainObject(true, intrareCLE1);
 
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        String mainObjectStr = objectMapper.writeValueAsString(mainObject1);
+        //        ObjectMapper objectMapper = new ObjectMapper();
+        //        String mainObjectStr = objectMapper.writeValueAsString(mainObject1);
 
-        MainObject deserielizedMainObject= given().
-                body(mainObject1).
-                when().
-                post("/intrare_auto_cle").
-                then().
-                extract().
-                response().
-                as(MainObject.class);
+        MainObject deserielizedMainObject = given().body(mainObject1).when().post("/intrare_auto_cle").then().extract().response().as(MainObject.class);
 
         System.out.println(deserielizedMainObject.toString());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String deserializedMainObjectStr = objectMapper.writeValueAsString(deserielizedMainObject.getIntrareCLE().getMarcaSofer()+" "+deserielizedMainObject.getIntrareCLE().getVin());
-        String mainObjectStr=objectMapper.writeValueAsString(mainObject1.getIntrareCLE().getMarcaSofer()+" "+mainObject1.getIntrareCLE().getVin());
-        assertThat(objectMapper.readTree(deserializedMainObjectStr),equalTo(objectMapper.readTree(mainObjectStr)));
+        String deserializedMainObjectStr = objectMapper.writeValueAsString(deserielizedMainObject.getIntrareCLE().getMarcaSofer() + " " + deserielizedMainObject.getIntrareCLE().getVin());
+        String mainObjectStr = objectMapper.writeValueAsString(mainObject1.getIntrareCLE().getMarcaSofer() + " " + mainObject1.getIntrareCLE().getVin());
+        assertThat(objectMapper.readTree(deserializedMainObjectStr), equalTo(objectMapper.readTree(mainObjectStr)));
     }
-
 
     //-------------TEST14-------------------
     //--------------------------------------
@@ -322,37 +293,30 @@ public class A3_BDD_POST {
     // Se foloseste dataProvider pentru a asigura mai multe valori de test
 
     @org.testng.annotations.Test(dataProvider = "IntrareCLE")
-    public void POST14_intrare_auto_cle(String marcaSofer,String vin) throws JsonProcessingException {
+    public void POST14_intrare_auto_cle(String marcaSofer, String vin) throws JsonProcessingException {
 
-        IntrareCLE intrareCLE1=new IntrareCLE(marcaSofer,vin);
-        MainObject mainObject1=new MainObject(true,intrareCLE1);
+        IntrareCLE intrareCLE1 = new IntrareCLE(marcaSofer, vin);
+        MainObject mainObject1 = new MainObject(true, intrareCLE1);
 
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        String mainObjectStr = objectMapper.writeValueAsString(mainObject1);
+        //        ObjectMapper objectMapper = new ObjectMapper();
+        //        String mainObjectStr = objectMapper.writeValueAsString(mainObject1);
 
-        MainObject deserielizedMainObject= given().
-                body(mainObject1).
-                when().
-                post("/intrare_auto_cle").
-                then().
-                extract().
-                response().
-                as(MainObject.class);
+        MainObject deserielizedMainObject = given().body(mainObject1).when().post("/intrare_auto_cle").then().extract().response().as(MainObject.class);
 
         System.out.println(deserielizedMainObject.toString());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String deserializedMainObjectStr = objectMapper.writeValueAsString(deserielizedMainObject.getIntrareCLE().getMarcaSofer()+" "+deserielizedMainObject.getIntrareCLE().getVin());
-        String mainObjectStr=objectMapper.writeValueAsString(mainObject1.getIntrareCLE().getMarcaSofer()+" "+mainObject1.getIntrareCLE().getVin());
-        assertThat(objectMapper.readTree(deserializedMainObjectStr),equalTo(objectMapper.readTree(mainObjectStr)));
+        String deserializedMainObjectStr = objectMapper.writeValueAsString(deserielizedMainObject.getIntrareCLE().getMarcaSofer() + " " + deserielizedMainObject.getIntrareCLE().getVin());
+        String mainObjectStr = objectMapper.writeValueAsString(mainObject1.getIntrareCLE().getMarcaSofer() + " " + mainObject1.getIntrareCLE().getVin());
+        assertThat(objectMapper.readTree(deserializedMainObjectStr), equalTo(objectMapper.readTree(mainObjectStr)));
     }
 
-    @DataProvider(name="IntrareCLE")
-    public Object[][] getIntrareCLE(){
-        return new Object[][]{
-                {"12345678","12345678901234567"},
-                {"12345678","123456789012345"},
-                {"123456","12345678901234567"}
+    @DataProvider(name = "IntrareCLE")
+    public Object[][] getIntrareCLE() {
+        return new Object[][] {
+                { "12345678", "12345678901234567" },
+                { "12345678", "123456789012345" },
+                { "123456", "12345678901234567" }
         };
     }
 }
